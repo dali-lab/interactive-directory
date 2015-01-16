@@ -1,0 +1,134 @@
+html *{
+	font-family: "Futura", sans-serif;
+	color:rgb(50,50,50);
+}
+
+body {
+	position: relative;
+}
+
+#api-menu-left{
+	width:17%;
+	height:100%;
+	background:rgb(29,29,29);
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+}
+
+#menu-field-add-individual, #menu-field-edit-individual, #menu-field-delete-individual, 
+#menu-field-add-group, #menu-field-delete-group, #menu-field-edit-group-priority,
+#aws-list-buckets, #menu-field-edit-individual-group, #menu-field-edit-group-name,
+#menu-field-edit-building {
+	text-align:center;
+	color:rgb(225,225,255);
+	font-size:large;
+	padding:15px;
+	background-color: rgb(29,29,29);
+}
+
+#api-buttons{
+	position:absolute;
+	left:0;
+	right:0;
+	padding:10%;
+	bottom:10%;
+	width:100%;
+}
+
+#api-top-panel{
+	background:rgb(240,240,240);
+	position:fixed;
+	top:0;
+	left:17%;
+	right:24%;
+}
+
+#api-bottom-panel{
+	background:rgb(240,240,240);
+	position:fixed;
+	bottom:0;
+	left:17%;
+	right:24%;
+	top: 85%;
+}
+
+#api-bottom-container{
+	float:left;
+	text-align:center;
+	color:rgb(29,29,29);
+	margin-left:4%;
+}
+
+#submit-button{
+	margin-left: 40%;
+	margin-right: auto;
+}
+
+#api-form-panel{
+	overflow:scroll;
+	background:rgb(240,240,240);
+	position:fixed;
+	top:15%;
+	left:17%;
+	right:62%;
+	bottom:15%;
+}
+
+#api-form-panel-middle{
+	overflow:scroll;
+	background:rgb(240,240,240);
+	position:fixed;
+	top:15%;
+	left:38%;
+	right:44%;
+	bottom:15%;
+}
+
+#api-form-panel-right{
+	overflow:scroll;
+	background:rgb(240,240,240);
+	position:fixed;
+	top:15%;
+	left:56%;
+	right:24%;
+	bottom:15%;
+}
+
+#api-center-title{
+	float:left;
+	text-align:left;
+	color:rgb(29,29,29);
+	font-size:xx-large;
+	margin-left:4%;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+#api-form-container, #api-form-container-middle, #api-form-container-right{
+	float:left;
+	text-align:left;
+	color:rgb(29,29,29);
+	margin-left:4%;
+}
+
+#api-right-result-panel{
+	width:25%;
+	height:100%;
+	background:rgb(29,29,29);
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	float:right;
+}
+
+#api-results{
+	text-align:left;
+	color:rgb(225,225,225);
+	font-size:large;
+	margin-top: 20px;
+	margin-bottom:30px;
+	padding:20px;
+}
