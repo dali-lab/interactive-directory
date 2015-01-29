@@ -1,230 +1,43 @@
 <!DOCTYPE html>
-<html ng-app>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!-- TODO: Replace with building name -->
-    <title>Interactive Directory</title>
-    <!--
-    <script type="text/javascript" src="/s/scripts/alphascroll.min.js"></script>
-    <script type="text/javascript" src="/s/scripts/alphascroll.mobile.min.js"></script>
-    <script type="text/javascript" src="/s/scripts/alphascroll.js"></script>
-    -->
-
-    <link href="/s/css/bootstrap-3.1.1/dist/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/s/css/directory.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="/s/css/alphascroll.css"/>
-    {# <link rel="stylesheet" type="text/css" href="/s/css/animations.css" media="screen"/> #}
-    <link rel="stylesheet" type="text/css" href="/s/css/touch_keyboard.css" media="screen"/>
-
-    <!-- Initialize alphascroll -->
-<!--    <script>
-        $( document ).ready( function() {
-            // Link names with current page, db
-            names = ["Lisa Luo", "Bo Gibson", "Sophia Haim"];
-            names.sort();
-
-            var namesListHTML = '';
-            $.each( names, function( i ) {
-                namesListHTML += '<li data-icon="false"><a href="#"><h4>' + names[i] + '</h3></a></li>';
-            });
-            $( '#mylistview' ).append( namesListHTML );
-            // $( '#mylistview' ).listview( 'refresh' ).alphascroll();
-        });
-    </script> -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="s/bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="s/bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="s/app/app.css">
+  <script src="s/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-
 <body>
+  <ul class="menu">
+    <li><a href="#/view1">view1</a></li>
+    <li><a href="#/view2">view2</a></li>
+  </ul>
 
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
 
-    <!-- Keyboard placement -->
-    <div id="keyboard-container">
-        <ul id="keyboard">
-            <li class="symbol"><span class="off">`</span><span class="on">~</span></li>
-            <li class="symbol"><span class="off">1</span><span class="on">!</span></li>
-            <li class="symbol"><span class="off">2</span><span class="on">@</span></li>
-            <li class="symbol"><span class="off">3</span><span class="on">#</span></li>
-            <li class="symbol"><span class="off">4</span><span class="on">$</span></li>
-            <li class="symbol"><span class="off">5</span><span class="on">%</span></li>
-            <li class="symbol"><span class="off">6</span><span class="on">^</span></li>
-            <li class="symbol"><span class="off">7</span><span class="on">&amp;</span></li>
-            <li class="symbol"><span class="off">8</span><span class="on">*</span></li>
-            <li class="symbol"><span class="off">9</span><span class="on">(</span></li>
-            <li class="symbol"><span class="off">0</span><span class="on">)</span></li>
-            <li class="symbol"><span class="off">-</span><span class="on">_</span></li>
-            <li class="symbol"><span class="off">=</span><span class="on">+</span></li>
-            <li class="delete lastitem">delete</li>
-            <li class="tab">tab</li>
-            <li class="letter">q</li>
-            <li class="letter">w</li>
-            <li class="letter">e</li>
-            <li class="letter">r</li>
-            <li class="letter">t</li>
-            <li class="letter">y</li>
-            <li class="letter">u</li>
-            <li class="letter">i</li>
-            <li class="letter">o</li>
-            <li class="letter">p</li>
-            <li class="symbol"><span class="off">[</span><span class="on">{</span></li>
-            <li class="symbol"><span class="off">]</span><span class="on">}</span></li>
-            <li class="symbol lastitem"><span class="off">\</span><span class="on">|</span></li>
-            <li class="capslock">caps lock</li>
-            <li class="letter">a</li>
-            <li class="letter">s</li>
-            <li class="letter">d</li>
-            <li class="letter">f</li>
-            <li class="letter">g</li>
-            <li class="letter">h</li>
-            <li class="letter">j</li>
-            <li class="letter">k</li>
-            <li class="letter">l</li>
-            <li class="symbol"><span class="off">;</span><span class="on">:</span></li>
-            <li class="symbol"><span class="off">'</span><span class="on">&quot;</span></li>
-            <li class="return lastitem">return</li>
-            <li class="left-shift">shift</li>
-            <li class="letter">z</li>
-            <li class="letter">x</li>
-            <li class="letter">c</li>
-            <li class="letter">v</li>
-            <li class="letter">b</li>
-            <li class="letter">n</li>
-            <li class="letter">m</li>
-            <li class="symbol"><span class="off">,</span><span class="on">&lt;</span></li>
-            <li class="symbol"><span class="off">.</span><span class="on">&gt;</span></li>
-            <li class="symbol"><span class="off">/</span><span class="on">?</span></li>
-            <li class="right-shift lastitem">shift</li>
-            <li class="space lastitem">&nbsp;</li>
-        </ul>
-    </div>
+  <div ng-view></div>
 
-     <script>
-        $('#search-bar').click(function() {
-            $('#keyboard-container').addClass("slideUp");
-        });
-    </script>
+  <div>Angular seed app: v<span app-version></span></div>
 
-        <!-- Alphascroll -->
-    <div id="alphascroll" data-role="page">
-        <div data-role="content">
-            <ul id="mylistview" data-role="listview" data-autodividers="true"></ul>
-        </div>
-    </div>
-
-
- 	<!-- Design the left sidebar here for the directory. -->
- 	<div id="menu-sidebar-left">
-
-	    <div id="menu-title">Sudikoff Directory</div>
-
-	    <!-- setSelectedField is located in main.js -->
-	    <div id="menu-field1">All</div>
-
-		<div id="map-button">
-            <img src="//s/img/DALI_logo.png" style="width:50%" >
-            <br><br>
-
-			<button type="button" class="btn btn-primary btn-lg btn-danger btn-block">MAP</button>
-		</div>
-
-	</div>
-
-	<!-- Design the center panel here for the directory. -->
-	<div id="center-panel">
-		<div class="container-fluid">
-			<div id="center-title">
-                <span id="field-text">Select a Field</span>
-                <span id="search-text">Matching: {{ searchText }}</span>
-            </div>
-
-			<div id="search-bar">
-
-				<input id="search-input" placeholder="Search for..." type="text" ng-model="searchText"/>
-
-                <div id="search-exit">
-                    <button type="button" class="btn btn-sm btn-danger">X</button>
-                </div>
-			</div>
-		</div>
-
-        <div id="scroll-bar">
-            <img src="//s/assets_temp/mockupScrollBar.png">
-        </div>
-
-        <!--
-        <div class="circular-video col-md-3">
-            <video autoplay loop muted>
-                <source src="//s/assets_temp/zhou_b.flv" type="video/mp4">
-            </video>
-            <div class="name-label">Bo Gibson</div>
-        </div>
-
-        <div class="circular-video col-md-3">
-            <video autoplay loop muted>
-                <source src="//s/assets_temp/zhou_s.flv" type="video/mp4">
-            </video>
-            <div class="name-label">Sophia Haim</div>
-        </div>
-
-        <div class="circular-video col-md-3">
-            <video autoplay loop muted>
-                <source src="//s/assets_temp/zhou_r.flv" type="video/mp4">
-            </video>
-            <div class="name-label">Lisa Luo</div>
-        </div>
-        -->
-
-		<!-- Container for the circles -->
-		<div id="people-container" class="container-fluid">
-
-		</div>
-	</div>
-
-	<!-- Design the person display here for the directory. -->
-	<div id="display-sidebar-right">
-
-		<!-- Used to display before anything else is shown -->
-		<span id="building-display">
-			<div id="building-name">
-		    	Sudikoff
-		    </div>
-		    <img id="building-image" src="/s/img/sudikoff.jpg" width="80%">
-		</span>
-
-		<span id="person-display">
-		    <div id="selected-name">
-
-		    	<!-- Displayed when a person has not been selected-->
-		    	<span id="no-person-selected">Select a Person
-		    	</span>
-
-		    	<!-- Displayed when a person has been selected, text will be replaced with name of selected person -->
-		    	<span id="person-selected"></span>
-
-		    	<div id="media-display">
-                    <!-- This video will also need to be dynamically populated -->
-		    		<video muted autoplay loop width="100%">
-				  		<source src="//s/assets_temp/zhou_p.flv" type="video/mp4">
-					</video>
-				</div>
-
-			    <div id="person-info">
-		 	    	<!-- needs to be dynamically populated -->
-		 	    </div>
-		    </div>
-	 	</span>
-	</div>
-
-    <!-- MAP DISPLAY -->
-	<div id="map">
-		<div id="map-buttons">
-			<div id="exit-map" class="floor-button">
-			</div>
-		</div>
-		<img id="map-img" src="/s/img/maps/1.gif">
-	</div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="/s/scripts/main.js"></script>
-
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="s/bower_components/angular/angular.js"></script>
+  <script src="s/bower_components/angular-route/angular-route.js"></script>
+  <script src="s/app/app.js"></script>
+  <script src="s/app/view1/view1.js"></script>
+  <script src="s/app/view2/view2.js"></script>
+  <script src="s/app/components/version/version.js"></script>
+  <script src="s/app/components/version/version-directive.js"></script>
+  <script src="s/app/components/version/interpolate-filter.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+app/static/app/*.js
+
 # dev stuff
 *.sublime-project
 *.sublime-workspace
@@ -55,3 +57,12 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+# from angular seed app
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea
