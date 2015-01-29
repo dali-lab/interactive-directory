@@ -1,4 +1,4 @@
-app/static/app/*.js
+app/static/app/**/*.js
 
 # dev stuff
 *.sublime-project
