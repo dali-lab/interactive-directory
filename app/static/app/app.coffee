@@ -1,13 +1,11 @@
 "use strict"
 
 # Declare app level module which depends on views, and components
-angular.module("myApp", [
+angular.module("directory", [
   "ngRoute"
-  "myApp.view1"
-  "myApp.view2"
-  "myApp.version"
+  "directory.group"
 ]).config [
   "$routeProvider"
   ($routeProvider) ->
-    $routeProvider.otherwise redirectTo: ""
+    $routeProvider.otherwise redirectTo: "/group"
 ]

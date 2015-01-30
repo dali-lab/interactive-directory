@@ -2,6 +2,8 @@
 
 Project by the <a href="http://dali.dartmouth.edu">Digital Arts Leaderships and Innovation (DALI) Lab</a> at Dartmouth College.
 
+Built on Django, Angular.js, Coffeescript, and Bootstrap.
+
 ## Set-up
 Run all commands from root directory of project.
 

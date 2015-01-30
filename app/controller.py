@@ -13,6 +13,9 @@ def JSONResponse(dictionary):
 @require_safe
 def retrieve_view(request):
     return render(request, "index.html", {
+        'building': {
+            'name': 'TODO'
+        },
         'groups': [{
             'group_id': g.id,
             'name': g.name,
