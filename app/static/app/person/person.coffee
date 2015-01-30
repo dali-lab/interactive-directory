@@ -1,5 +1,7 @@
 "use strict"
 angular.module("directory.person", ["ui.router"]).controller(
-  "PersonCtrl", [->
+  "PersonCtrl", ["$stateParams", "$http", "$scope",
+    ($stateParams, $http, $scope)->
+
   ]
 )
