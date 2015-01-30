@@ -9,5 +9,5 @@ angular.module("myApp", [
 ]).config [
   "$routeProvider"
   ($routeProvider) ->
-    $routeProvider.otherwise redirectTo: "view1"
+    $routeProvider.otherwise redirectTo: ""
 ]

@@ -12,7 +12,13 @@ def JSONResponse(dictionary):
 
 @require_safe
 def retrieve_view(request):
-    return render(request, "index.html")
+    return render(request, "index.html", {
+        'groups': [{
+            'group_id': g.id,
+            'name': g.name,
+            'priority': g.priority
+        } for g in StaffGroup.objects.all()],
+    })
 
 
 @require_safe

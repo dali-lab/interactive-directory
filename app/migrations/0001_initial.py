@@ -21,6 +21,17 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
+            name='ExtraField',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('field', models.CharField(max_length=100)),
+                ('value', models.CharField(max_length=500)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
             name='Individual',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
@@ -53,6 +64,12 @@ class Migration(migrations.Migration):
             model_name='individual',
             name='group',
             field=models.ForeignKey(to='app.StaffGroup'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='extrafield',
+            name='individual',
+            field=models.ForeignKey(to='app.Individual'),
             preserve_default=True,
         ),
     ]

@@ -6,27 +6,68 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Directory</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="s/bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="s/bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" type="text/css" href="s/bootstrap.min.css">
   <link rel="stylesheet" href="s/app/app.css">
   <script src="s/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+  <div class="container-fluid">
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+    <div class="col-md-3">
 
-  <div ng-view></div>
+      <div class="row">
+        <div class="col-md-12">
+          Building Name
+        </div>
+      </div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+      {% for group in groups %}
+      <div class="row">
+        <div class="col-md-12">
+          {{ group.name }}
+        </div>
+      </div>
+      {% endfor %}
+
+<!--
+      <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <li><a href="#/view1">view1</a></li>
+            <li><a href="#/view2">view2</a></li>
+          </ul>
+        </div>
+      </div>
+-->
+    </div>
+
+    <div class="col-md-5">
+
+      <div class="row">
+        <div class="col-md-12">
+          Angular seed app: v<span app-version></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <!--[if lt IE 7]>
+              <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+          <![endif]-->
+          <div ng-view></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      Pick a field
+    </div>
+  </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
