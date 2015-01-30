@@ -33,20 +33,6 @@ def get_building(request):
 
 
 @require_safe
-def get_groups(request):
-    """
-    Returns all of the groups
-    """
-    return JSONResponse({
-        'groups': [{
-            'group_id': g.id,
-            'name': g.name,
-            'priority': g.priority
-        } for g in StaffGroup.objects.all()],
-    })
-
-
-@require_safe
 def get_individuals_in_group(request, group_id):
     """
     Returns the individuals in a group
@@ -58,8 +44,11 @@ def get_individuals_in_group(request, group_id):
         return HttpResponseNotFound
 
     return JSONResponse({
-        # TODO: sort in alphabetical order
+        'group': {
+            'name': group.name
+        },
         'people': [
+            # TODO: sort in alphabetical order
             p.json_data() for p in Individual.objects.filter(group=group)
         ]
     })
