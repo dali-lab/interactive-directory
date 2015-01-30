@@ -5,6 +5,7 @@ angular.module("directory", [
   "ui.router"
   "directory.group"
   "directory.person"
+  "directory.info"
 ]).config ($stateProvider, $urlRouterProvider) ->
   $urlRouterProvider.otherwise "/"
 
@@ -20,8 +21,8 @@ angular.module("directory", [
         controller:"GroupCtrl as group"
       },
       "person-view": {
-        templateUrl: "/s/app/person/person.html"
-        controller:"PersonCtrl as person"
+        templateUrl: "/s/app/info/info.html"
+        controller:"InfoCtrl as info"
       }
     }
 
@@ -37,8 +38,8 @@ angular.module("directory", [
         controller:"GroupCtrl as group"
       },
       "person-view": {
-        templateUrl: "/s/app/person/person.html"
-        controller:"PersonCtrl as person"
+        templateUrl: "/s/app/info/info.html"
+        controller:"InfoCtrl as info"
       }
     }
 
@@ -55,7 +56,7 @@ angular.module("directory", [
       },
       "person-view": {
         templateUrl: "/s/app/person/person.html"
-        controller:"PersonCtrl as person"
+        controller:"PersonCtrl as pCtrl"
       }
     }
   )

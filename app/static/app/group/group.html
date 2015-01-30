@@ -9,6 +9,8 @@
 
 <div class="row">
   <div class="col-md-4" ng-repeat="person in group.people">
-    {{person.first_name}} {{person.last_name}}
+    <a href="#/g/{{ group.groupId }}/p/{{ person.person_id }}">
+      {{person.first_name}} {{person.last_name}}
+    </a>
   </div>
 </div>
