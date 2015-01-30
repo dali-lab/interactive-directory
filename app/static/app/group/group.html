@@ -1,16 +1,25 @@
 <div class="row">
+
   <div class="col-md-8">
-    {{ group.groupName }}<span app-version></span>
+    <div class="row">
+      <div class="col-md-8">
+        {{ group.groupName }}<span app-version></span>
+      </div>
+      <div class="col-md-4">
+          <!-- TODO: add search bar -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" ng-repeat="person in group.people">
+        <a href="{{ group.urlPrefix }}/p/{{ person.person_id }}">
+          {{person.first_name}} {{person.last_name}}
+        </a>
+      </div>
+    </div>
   </div>
-  <div class="col-md-4">
-      <!-- TODO: add search bar -->
-  </div>
+
+  <div class="col-md-4" ui-view></div>
+
 </div>
 
-<div class="row">
-  <div class="col-md-4" ng-repeat="person in group.people">
-    <a href="#/g/{{ group.groupId }}/p/{{ person.person_id }}">
-      {{person.first_name}} {{person.last_name}}
-    </a>
-  </div>
-</div>

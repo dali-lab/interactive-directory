@@ -2,6 +2,7 @@
 angular.module("directory.group", ["ui.router"]).controller(
   "GroupCtrl", ["$stateParams", "$http", "$scope",
     ($stateParams, $http, $scope)->
+      @urlPrefix = if @groupId then "#/g/#{@groupId}" else "#/a"
       @groupId = $stateParams.groupId
       @groupName = ""
       @people = []

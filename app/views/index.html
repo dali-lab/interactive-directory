@@ -38,7 +38,7 @@
 
         {% for group in groups %}
         <div class="row">
-          <a href="#/g/{{ group.group_id }}">
+          <a href="#/g/{{ group.group_id }}/">
             <div class="col-md-12">
               {{ group.name }}
             </div>
@@ -58,8 +58,7 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
-      <div class="col-md-6" ui-view="group-view"></div>
-      <div class="col-md-4" ui-view="person-view"></div>
+      <div class="col-md-10" ui-view></div>
 
     </div>
   </div>
