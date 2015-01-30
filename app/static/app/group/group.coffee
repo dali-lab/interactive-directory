@@ -1,13 +1,13 @@
 "use strict"
-angular.module("directory.group", ["ngRoute"]).config([
-  "$routeProvider"
-  ($routeProvider) ->
-    $routeProvider.when("/group",
+angular.module("directory.group", ["ui.router"]).config(
+  ($stateProvider) ->
+    $stateProvider.state(
+      "group",
+      url: "/group/:id",
       templateUrl: "/s/app/group/group.html"
-      controller: "GroupCtrl")
-      .when "/group/:group_id",
-        templateUrl: "/s/app/group/group.html"
-        controller: "GroupCtrl"
-
-]).controller "GroupCtrl", [->
+      controller:"GroupCtrl"
+      params:
+        id: 0
+    )
+).controller "GroupCtrl", [->
 ]

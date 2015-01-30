@@ -2,10 +2,9 @@
 
 # Declare app level module which depends on views, and components
 angular.module("directory", [
-  "ngRoute"
+  "ui.router"
   "directory.group"
-]).config [
-  "$routeProvider"
-  ($routeProvider) ->
-    $routeProvider.otherwise redirectTo: "/group"
-]
+]).config ($stateProvider, $urlRouterProvider) ->
+  $urlRouterProvider.otherwise "/group/" # TODO: make sure this works
+
+  return
