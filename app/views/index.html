@@ -29,7 +29,7 @@
         </div>
 
         <div class="row">
-          <a ui-sref="all">
+          <a ui-sref="all.nobodySelected">
             <div class="col-md-12">
               All
             </div>
@@ -38,7 +38,7 @@
 
         {% for group in groups %}
         <div class="row">
-          <a ui-sref="group({ groupId: {{ group.group_id }} })">
+          <a ui-sref="group.nobodySelected({ groupId: {{ group.group_id }} })">
             <div class="col-md-12">
               {{ group.name }}
             </div>

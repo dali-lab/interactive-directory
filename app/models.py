@@ -63,16 +63,27 @@ class StaffGroup(models.Model):
         return self.name
 
 
+class BuildingManager(models.Manager):
+
+    """
+    """
+
+    def get_building(self):
+        try:
+            return self.order_by('id')[0]
+        except IndexError:
+            return Building(name="Create a building in /admin")
+
+
 class Building(models.Model):
 
     """
     """
 
+    objects = BuildingManager()
     name = models.CharField(max_length=64)
 
     def __str__(self):
         return self.name
-
-    # TODO: make custom shared_store manager
 
 # TODO: floor class containing the map

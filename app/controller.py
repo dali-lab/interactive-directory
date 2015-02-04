@@ -14,7 +14,7 @@ def JSONResponse(dictionary):
 def retrieve_view(request):
     return render(request, "index.html", {
         'building': {
-            'name': 'TODO'
+            'name': Building.objects.get_building().name
         },
         'groups': [{
             'group_id': g.id,
@@ -27,8 +27,7 @@ def retrieve_view(request):
 @require_safe
 def get_building(request):
     return JSONResponse({
-        'name': 'TODO',
-        'image': 'TODO'
+        'name': Building.objects.get_building().name
     })
 
 
