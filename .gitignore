@@ -1,5 +1,7 @@
 app/static/app/**/*.js
 
+venv/
+
 # dev stuff
 *.sublime-project
 *.sublime-workspace
