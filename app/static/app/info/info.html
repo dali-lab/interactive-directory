@@ -5,29 +5,38 @@
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-    <i class="fa fa-calendar-o"></i>
-    Date
+  <div class="col-md-6">
+    <i class="fa fa-5x fa-calendar-o"></i>
+  </div>
+  <div class="col-md-6">
+     {{ info.date | date:'EEEE'}}<br />
+     {{ info.date | date:'MMMM d, yyyy'}}
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-    <i class="fa fa-clock-o"></i>
-    Time
+  <div class="col-md-6">
+    <i class="fa fa-5x fa-clock-o"></i>
+  </div>
+  <div class="col-md-6">
+    {{ info.date | date:'h:mm:ss a'}}
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-    <i class="fa fa-sun-o"></i>
+  <div class="col-md-6">
+    <i class="fa fa-5x fa-sun-o"></i>
+  </div>
+  <div class="col-md-6">
     Weather
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-    <i class="fa fa-twitter"></i>
+  <div class="col-md-6">
+    <i class="fa fa-5x fa-twitter"></i>
+  </div>
+  <div class="col-md-6">
     Twitter
   </div>
 </div>
