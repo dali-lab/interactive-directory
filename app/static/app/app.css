@@ -1,6 +1,19 @@
 html, body {
   font-family: 'Lato', sans-serif;
   height: 100%;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+.person-container {
+  padding-top: 40px;
+}
+
+.black-font {
+  color: black;
 }
 
 .container, .container-fluid {
@@ -17,4 +30,16 @@ html, body {
 
 .groups-header {
   background-color: #E7C024;
+  height: 80px;
+  border-bottom-color: #6F7174;
+  border-bottom-width: thick;
+  border-bottom-style: solid;
+}
+
+.person-header {
+  height: 80px;
+}
+
+.person-fields {
+  padding-top: 30px;
 }

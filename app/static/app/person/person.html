@@ -1,37 +1,41 @@
 <div class="row">
-  <div class="col-md-12">
-    <h3>{{ pCtrl.person.first_name }} {{ pCtrl.person.last_name }}</h3>
+  <div class="person-header text-center col-md-12">
+    <h3>{{ pCtrl.person.first_name | uppercase }} {{ pCtrl.person.last_name | uppercase }}</h3>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <img src="http://placekitten.com/g/500/400" class="img-responsive">
-    Image here
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    Phone: {{ pCtrl.person.phone_number }}
-  </div>
-</div>
+<div class="person-fields row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="row">
+      <div class="col-md-12">
+        <h4><strong>PHONE:</strong> {{ pCtrl.person.phone_number }}</h4>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="col-md-12">
-    Email: {{ pCtrl.person.email }}
-  </div>
-</div>
+    <div class="row">
+      <div class="col-md-12">
+        <h4><strong>EMAIL:</strong> {{ pCtrl.person.email }}</h4>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="col-md-12">
-    Office: {{ pCtrl.person.office }}
-  </div>
-</div>
+    <div class="row">
+      <div class="col-md-12">
+        <h4><strong>OFFICE:</strong> {{ pCtrl.person.office }}</h4>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="col-md-12">
-    Bio:
+    <div class="row">
+      <div class="col-md-12">
+        <h4><strong>BIO:</strong></h4>
+      </div>
+    </div>
+
   </div>
 </div>
 
