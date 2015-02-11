@@ -14,25 +14,28 @@
   <link rel="stylesheet" type="text/css" href="{% static 'bower_components/html5-boilerplate/css/main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'font-awesome-4.3.0/css/font-awesome.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'app/app.css' %}">
   <script src="{% static 'bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'app/app.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="container-fluid">
     <div class="row">
 
-      <div class="col-md-2">
+      <div class="tabs-column col-md-2">
 
         <div class="row">
-          <div class="col-md-12">
-            {{ building.name }}
+          <div class="text-center col-md-12">
+            <p>
+              <h1>{{ building.name | upper }}<br /> DIRECTORY</h1>
+            </p>
           </div>
         </div>
 
         <div class="row">
           <a ui-sref="all.nobodySelected">
-            <div class="col-md-12">
-              All
+            <div class="text-center col-md-12">
+              <h2>ALL</h2>
             </div>
           </a>
         </div>
@@ -40,8 +43,8 @@
         {% for group in groups %}
         <div class="row">
           <a ui-sref="group.nobodySelected({ groupId: {{ group.group_id }} })">
-            <div class="col-md-12">
-              {{ group.name }}
+            <div class="text-center col-md-12">
+              <h2>{{ group.name | upper }}</h2>
             </div>
           </a>
         </div>
@@ -50,7 +53,7 @@
         <!-- TODO: check that maps exist -->
         <div class="row">
           <div class="col-md-12">
-            Map
+            <button class="btn btn-danger btn-block"><h2>MAP</h2></button>
           </div>
         </div>
       </div>
