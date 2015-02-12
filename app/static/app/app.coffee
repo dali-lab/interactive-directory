@@ -8,10 +8,26 @@ directory = angular.module("directory", [
   "directory.info"
 ])
 
-directory.controller("DirectoryCtrl", ["$timeout"
-    ($timeout)->
-      $timeout((-> window.location = "/screensaver"), 120000)
-  ])
+directory.controller("DirectoryCtrl", ["$timeout", ($timeout)->
+
+  # start timer for screensaver (180000 = 3 minutes)
+  startScreenSaverTimer = ->
+    $timeout((-> window.location = "/screensaver"), 180000)
+
+  # initialize screen saver timer
+  screensaverTimer = startScreenSaverTimer()
+
+  # reset screen saver timer
+  resetScreenSaverTimer = =>
+    $timeout.cancel(screensaverTimer)
+    screensaverTimer = startScreenSaverTimer()
+
+  # set up click handler to reset screen saver timer
+  document.addEventListener("click", ->
+    resetScreenSaverTimer()
+  )
+
+])
 
 directory.config ($stateProvider, $urlRouterProvider) ->
   $urlRouterProvider.otherwise "/a/"
