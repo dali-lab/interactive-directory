@@ -40,6 +40,11 @@ a {
   height: 80px;
 }
 
+.info-header {
+  height: 80px;
+  padding-bottom: 20px;
+}
+
 .person-fields {
   padding-top: 30px;
 }
