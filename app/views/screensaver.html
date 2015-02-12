@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="screensaver" class="no-js"> <!--<![endif]-->
+<head>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ building.name }}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'bower_components/html5-boilerplate/css/normalize.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'bower_components/html5-boilerplate/css/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'font-awesome-4.3.0/css/font-awesome.min.css' %}">
+  <script src="{% static 'bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'app/app.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <div class="row">
+    <div class="text-center col-md-12">
+        welcome to
+    </div>
+  </div>
+
+    <div class="row">
+    <div class="text-center col-md-12">
+        {{ building.name | upper }}
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="text-center col-md-12">
+        DARTMOUTH DEPARTMENT OF COMPUTER SCIENCE
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="text-center col-md-4">
+        <i class="fa fa-5x fa-calendar">
+          {{ info.date | date:'EEEE'}}<br />
+         {{ info.date | date:'MMMM d, yyyy'}}
+        </i>
+      </div>
+      <div class="text-center col-md-4">
+        <i class="fa fa-5x fa-clock-o">
+          {{ info.date | date:'h:mm:ss a'}}
+        </i>
+      </div>
+      <div class="text-center col-md-4">
+        <i class="fa fa-5x fa-sun-o">Weather</i>
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="text-center col-md-12">
+        TOUCH TO BEGIN
+    </div>
+  </div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="{% static 'bower_components/angular/angular.js' %}"></script>
+  <script src="{% static 'app/screensaver.js' %}"></script>
+</body>
+</html>
