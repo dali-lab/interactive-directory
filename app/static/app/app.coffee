@@ -10,7 +10,7 @@ directory = angular.module("directory", [
 
 directory.controller("DirectoryCtrl", ["$timeout"
     ($timeout)->
-      $timeout((-> window.location = "/screensaver"), 3000)
+      $timeout((-> window.location = "/screensaver"), 120000)
   ])
 
 directory.config ($stateProvider, $urlRouterProvider) ->

@@ -12,18 +12,18 @@
 
     <div class="row">
       <div class="person-container col-md-4" ng-repeat="person in group.people">
-        <div class="row">
-          <div class="col-md-12">
-            <img src="http://placekitten.com/g/300/300" class="img-circle img-responsive">
+        <a href="{{ group.urlPrefix }}/p/{{ person.person_id }}">
+          <div class="row">
+            <div class="col-md-12">
+              <img src="http://placekitten.com/g/300/300" class="img-circle img-responsive">
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="text-center col-md-12">
-            <a href="{{ group.urlPrefix }}/p/{{ person.person_id }}">
-              <h4 class="black-font">{{ person.first_name}} <strong>{{person.last_name}}</strong></h4>
-            </a>
+          <div class="row">
+            <div class="text-center col-md-12">
+                <h4 class="black-font">{{ person.first_name}} <strong>{{person.last_name}}</strong></h4>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
