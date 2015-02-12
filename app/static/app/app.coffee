@@ -1,12 +1,19 @@
 "use strict"
 
 # Declare app level module which depends on views, and components
-angular.module("directory", [
+directory = angular.module("directory", [
   "ui.router"
   "directory.group"
   "directory.person"
   "directory.info"
-]).config ($stateProvider, $urlRouterProvider) ->
+])
+
+directory.controller("DirectoryCtrl", ["$timeout"
+    ($timeout)->
+      $timeout((-> window.location = "/screensaver"), 3000)
+  ])
+
+directory.config ($stateProvider, $urlRouterProvider) ->
   $urlRouterProvider.otherwise "/a/"
 
   $stateProvider.state(
