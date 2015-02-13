@@ -19,45 +19,47 @@
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-  <div class="row">
-    <div class="text-center col-md-12">
-        welcome to
-    </div>
-  </div>
+  <div class="screensaver">
 
     <div class="row">
-    <div class="text-center col-md-12">
-        {{ building.name | upper }}
+      <div class="text-center col-md-12">
+          <h2>welcome to</h2>
       </div>
     </div>
 
-    <div class="row">
-    <div class="text-center col-md-12">
-        DARTMOUTH DEPARTMENT OF COMPUTER SCIENCE
+      <div class="row">
+      <div class="text-center col-md-12">
+          <h1> {{ building.name | upper }} </h1>
+        </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="text-center col-md-4">
-        <i class="fa fa-5x fa-calendar">
-          {{ info.date | date:'EEEE'}}<br />
-         {{ info.date | date:'MMMM d, yyyy'}}
-        </i>
+      <div class="row">
+      <div class="text-center col-md-12">
+          DARTMOUTH DEPARTMENT OF COMPUTER SCIENCE
+        </div>
       </div>
-      <div class="text-center col-md-4">
-        <i class="fa fa-5x fa-clock-o">
-          {{ info.date | date:'h:mm:ss a'}}
-        </i>
-      </div>
-      <div class="text-center col-md-4">
-        <i class="fa fa-5x fa-sun-o">Weather</i>
-      </div>
-    </div>
 
-    <div class="row">
-    <div class="text-center col-md-12">
-        TOUCH TO BEGIN
+      <div class="row">
+        <div class="text-center col-md-4">
+          <i class="fa fa-5x fa-calendar">
+            {{ info.date | date:'EEEE'}}<br />
+           {{ info.date | date:'MMMM d, yyyy'}}
+          </i>
+        </div>
+        <div class="text-center col-md-4">
+          <i class="fa fa-5x fa-clock-o">
+            {{ info.date | date:'h:mm:ss a'}}
+          </i>
+        </div>
+        <div class="text-center col-md-4">
+          <i class="fa fa-5x fa-sun-o"></i>
+        </div>
+      </div>
+
+      <div class="row">
+      <div class="text-center col-md-12">
+          TOUCH TO BEGIN
+      </div>
     </div>
   </div>
 

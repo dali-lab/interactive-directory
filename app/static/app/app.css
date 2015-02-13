@@ -4,12 +4,9 @@ html, body {
   color: white;
 }
 
-.background-image {
-  background: url(../assets_temp/star.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.screensaver {
+  background-color: #4A9AAE;
+  height: 100%; width: 100%;
 }
 
 a {
