@@ -4,6 +4,15 @@ html, body {
   color: white;
 }
 
+.active-tab {
+  background-color: #92C3D0;
+  color: black;
+}
+
+.active-tab > a > div > h2 {
+  color: black;
+}
+
 .screensaver {
   background-color: #4A9AAE;
   height: 100%; width: 100%;
