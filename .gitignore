@@ -1,4 +1,4 @@
-app/static/app/**/*.js
+app/static/**/*.js
 
 venv/
 

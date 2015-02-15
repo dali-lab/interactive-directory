@@ -14,7 +14,7 @@ Run all commands from root directory of project.
 > cd app/static; npm install; cd ..;
 
 ##### Compile coffeescript
-> coffee --watch -c app/static/app/
+> coffee --watch -c app/static/
 
 Remove ```--watch``` if you just want to compile once.
 
