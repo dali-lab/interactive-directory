@@ -27,7 +27,8 @@ def retrieve_view(request):
 def retrieve_screensaver(request):
     return render(request, "screensaver.html", {
         'building': {
-            'name': Building.objects.get_building().name
+            'name': Building.objects.get_building().name,
+            'description': Building.objects.get_building().description
         },
     })
 
