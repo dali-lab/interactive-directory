@@ -19,8 +19,7 @@
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="screensaver">
-
+  <div class="container-fluid screensaver" ng-controller="ScreensaverCtrl as screensaver">
     <div class="row welcome">
       <div class="text-center col-md-12">
           <p style="font-size:5vw">
@@ -47,18 +46,25 @@
 
     <div class="row welcome-icons">
       <div class="text-center col-md-4">
-        <i class="fa fa-5x fa-calendar">
-          {{ info.date | date:'EEEE'}}<br />
-         {{ info.date | date:'MMMM d, yyyy'}}
-        </i>
+        <i class="fa fa-5x fa-calendar"></i>
+        <br>
+        <p>
+          {% verbatim %}
+          {{ screensaver.date | date:'EEEE'}}<br />
+          {{ screensaver.date | date:'MMMM d, yyyy'}}</p>
+          {% endverbatim %}
       </div>
       <div class="text-center col-md-4">
-        <i class="fa fa-5x fa-clock-o">
-            {{ info.date | date:'h:mm:ss a'}} </i>
+        <i class="fa fa-5x fa-clock-o"></i>
+        <br>
+          {% verbatim %}
+          {{ screensaver.date | date:'h:mm:ss a'}} 
+          {% endverbatim %}
       </div>
 
       <div class="text-center col-md-4">
-        <i class="fa fa-5x fa-sun-o"></i>
+        <i class="fa fa-5x fa-sun-o"></i><br />
+        Weather
       </div>
     </div>
 
@@ -70,7 +76,6 @@
         </p>
       </div>
     </div>
-
   </div>
 
   <!-- In production use:

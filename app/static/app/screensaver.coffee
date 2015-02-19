@@ -1,8 +1,13 @@
 "use strict"
 angular.module("screensaver", []).controller(
-  "ScreensaverCtrl", ["$scope",
-    ($scope)->
-    	# add data for building name and department
+  "ScreensaverCtrl", ["$scope", "$timeout"
+    ($scope, $timeout)->
+    	@date = new Date();
+
+    	dateUpdater = =>
+            @date = new Date();
+            $timeout((-> dateUpdater()), 1000);
+        dateUpdater()
 
       $scope = @
   ]
