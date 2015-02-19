@@ -65,8 +65,14 @@
       </div>
 
       <div class="text-center col-md-4">
-        <i class="fa fa-5x fa-sun-o"></i><br />
-        Weather
+        <span class="fa-stack fa-5x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-sun-o fa-stack-1x"></i>
+        </span>
+        <br />
+        {% verbatim %}
+        {{ screensaver.weather.main.temp }} °F
+        {% endverbatim %}
       </div>
     </div>
 
