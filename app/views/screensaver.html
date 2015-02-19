@@ -30,8 +30,8 @@
 
     <div class="row">
       <div class="text-center col-md-12">
-          <p style="font-size:8vw;font-weight:bold"> 
-            {{ building.name | upper }} 
+          <p style="font-size:8vw;font-weight:bold">
+            {{ building.name | upper }}
           </p>
       </div>
     </div>
@@ -39,7 +39,9 @@
     <div class="row">
       <div class="text-center col-md-12">
         <p p style="font-size:2vw">
-          {{ building.description | upper }}
+          {% if building.description %}
+            {{ building.description | upper }}
+          {% endif %}
         </p>
       </div>
     </div>
@@ -58,7 +60,7 @@
         <i class="fa fa-5x fa-clock-o"></i>
         <br>
           {% verbatim %}
-          {{ screensaver.date | date:'h:mm:ss a'}} 
+          {{ screensaver.date | date:'h:mm:ss a'}}
           {% endverbatim %}
       </div>
 
