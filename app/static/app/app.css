@@ -40,6 +40,14 @@ a {
 
 .tabs-column, .right-column {
   background-color: #4A9AAE;
+  position: relative;
+}
+
+.maps-row {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
 }
 
 .groups-header {
