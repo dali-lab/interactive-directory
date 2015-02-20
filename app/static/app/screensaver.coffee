@@ -2,7 +2,7 @@
 angular.module("screensaver", []).controller("ScreensaverCtrl",
     ["$scope", "$timeout", "$http", ($scope, $timeout, $http)->
         @date = new Date()
-        @weather
+        @weather = "finding weather..."
 
         WEATHER_API = 'http://api.openweathermap.org/data/2.5/weather?&q='
         API_QUERIES = 'callback=JSON_CALLBACK&units=imperial'
