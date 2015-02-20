@@ -23,12 +23,13 @@ def retrieve_view(request):
         } for g in StaffGroup.objects.all()],
     })
 
+
 @require_safe
 def retrieve_screensaver(request):
     return render(request, "screensaver.html", {
         'building': {
             'name': Building.objects.get_building().name,
-            'description': Building.objects.get_building().description
+            'description': Building.objects.get_building().description,
         },
     })
 
@@ -36,7 +37,9 @@ def retrieve_screensaver(request):
 @require_safe
 def get_building(request):
     return JSONResponse({
-        'name': Building.objects.get_building().name
+        'name': Building.objects.get_building().name,
+        'description': Building.objects.get_building().description,
+        'location': Building.objects.get_building().location
     })
 
 

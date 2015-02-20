@@ -72,7 +72,10 @@ class BuildingManager(models.Manager):
         try:
             return self.order_by('id')[0]
         except IndexError:
-            return Building(name="Create a building in /admin")
+            return Building(
+                name="Create a building in /admin",
+                location="Specify location in Building model in /admin"
+            )
 
 
 class Building(models.Model):
@@ -83,6 +86,7 @@ class Building(models.Model):
     objects = BuildingManager()
     name = models.CharField(max_length=64)
     description = models.CharField(max_length=64, null=True, blank=True)
+    location = models.CharField(max_length=64)
 
     def __str__(self):
         return self.name

@@ -46,7 +46,9 @@
       </div>
     </div>
 
+    {% verbatim %}
     <div class="row welcome-icons">
+
       <div class="text-center col-md-4">
         <span class="fa-stack fa-5x">
           <i class="fa fa-circle fa-stack-2x"></i>
@@ -54,33 +56,30 @@
         </span>
         <br>
         <p>
-          {% verbatim %}
           {{ screensaver.date | date:'EEEE'}}<br />
           {{ screensaver.date | date:'MMMM d, yyyy'}}</p>
-          {% endverbatim %}
       </div>
+
       <div class="text-center col-md-4">
         <span class="fa-stack fa-5x">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-clock-o fa-stack-1x"></i>
         </span>
         <br>
-          {% verbatim %}
           {{ screensaver.date | date:'h:mm:ss a'}}
-          {% endverbatim %}
       </div>
 
-      <div class="text-center col-md-4">
+      <div ng-show="screensaver.weather" class="text-center col-md-4">
         <span class="fa-stack fa-5x">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-sun-o fa-stack-1x"></i>
         </span>
         <br />
-        {% verbatim %}
         {{ screensaver.weather.main.temp }} °F
-        {% endverbatim %}
       </div>
+
     </div>
+    {% endverbatim %}
 
     <div class="row">
       <div class="text-center col-md-12 touch-to-begin">
