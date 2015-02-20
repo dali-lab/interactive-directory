@@ -1,7 +1,6 @@
 "use strict"
-angular.module("directory.info", ["ui.router"]).controller(
-  "InfoCtrl", ["$stateParams", "$http", "$scope", "$timeout"
-    ($stateParams, $http, $scope, $timeout)->
+angular.module("directory.info", []).controller("InfoCtrl",
+    ["$http", "$scope", "$timeout", ($http, $scope, $timeout)->
         @date = new Date()
         @weather = "finding weather..."
 
@@ -25,5 +24,5 @@ angular.module("directory.info", ["ui.router"]).controller(
             getWeather(data.location)
 
         $scope = @;
-  ]
+    ]
 )

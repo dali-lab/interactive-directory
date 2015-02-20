@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="screensaver" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="screensaver" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="screensaver" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="screensaver" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="directory.info" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="directory.info" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="directory.info" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="directory.info" class="no-js"> <!--<![endif]-->
 <head>
   {% load staticfiles %}
   <meta charset="utf-8">
@@ -19,7 +19,7 @@
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="container-fluid screensaver" ng-controller="ScreensaverCtrl as screensaver">
+  <div class="container-fluid screensaver" ng-controller="InfoCtrl as info">
     <div class="row welcome">
       <div class="text-center col-md-12">
           <p style="font-size:5vw">
@@ -56,8 +56,8 @@
         </span>
         <br>
         <p>
-          {{ screensaver.date | date:'EEEE'}}<br />
-          {{ screensaver.date | date:'MMMM d, yyyy'}}</p>
+          {{ info.date | date:'EEEE'}}<br />
+          {{ info.date | date:'MMMM d, yyyy'}}</p>
       </div>
 
       <div class="text-center col-md-4">
@@ -66,16 +66,16 @@
           <i class="fa fa-clock-o fa-stack-1x"></i>
         </span>
         <br>
-          {{ screensaver.date | date:'h:mm:ss a'}}
+          {{ info.date | date:'h:mm:ss a'}}
       </div>
 
-      <div ng-show="screensaver.weather" class="text-center col-md-4">
+      <div ng-show="info.weather" class="text-center col-md-4">
         <span class="fa-stack fa-5x">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-sun-o fa-stack-1x"></i>
         </span>
         <br />
-        {{ screensaver.weather.main.temp }} °F
+        {{ info.weather.main.temp }} °F
       </div>
 
     </div>
@@ -95,6 +95,6 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="{% static 'bower_components/angular/angular.js' %}"></script>
-  <script src="{% static 'app/screensaver.js' %}"></script>
+  <script src="{% static 'app/info/info.js' %}"></script>
 </body>
 </html>
