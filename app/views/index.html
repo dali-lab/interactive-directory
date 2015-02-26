@@ -18,8 +18,8 @@
   <link rel="stylesheet" type="text/css" href="{% static 'app/app.css' %}">
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <div class="container-fluid" ng-controller="DirectoryCtrl as directory">
+<body ng-controller="DirectoryCtrl as directory">
+  <div class="container-fluid">
     <div class="full-height row">
       <div class="full-height tabs-column col-md-2">
 
@@ -50,11 +50,14 @@
         {% endfor %}
 
         <!-- TODO: check that maps exist -->
-        <div class="row maps-row">
+        {% verbatim %}
+        <div class="row maps-row" ng-click="directory.openMap()">
           <div class="col-md-12">
             <button class="btn btn-danger btn-block"><h2>MAP</h2></button>
           </div>
         </div>
+        {% endverbatim %}
+
       </div>
 
       <!--[if lt IE 7]>
@@ -65,6 +68,16 @@
 
     </div>
   </div>
+
+  {% verbatim %}
+  <!-- map code, starts-->
+  <div class="map-container" ng-show="directory.mapOpen" ng-click="directory.closeMap()">
+    <div class="map">
+      <img src="http://placekitten.com/g/500/500">
+    </div>
+  </div>
+  {% endverbatim %}
+
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
