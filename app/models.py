@@ -9,7 +9,7 @@ class Individual(models.Model):
 
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
-    phone_number = models.IntegerField()
+    phone_number = models.CharField(max_length=20)
     email = models.EmailField()
     office = models.CharField(max_length=100)
 

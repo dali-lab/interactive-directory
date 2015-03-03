@@ -38,7 +38,7 @@
 
     <div class="row">
       <div class="text-center col-md-12">
-        <p p style="font-size:2vw">
+        <p p style="font-size:2.2vw">
           {% if building.description %}
             {{ building.description | upper }}
           {% endif %}
@@ -48,15 +48,14 @@
 
     {% verbatim %}
     <div class="row welcome-icons">
-
       <div class="text-center col-md-4">
         <span class="fa-stack fa-5x">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-calendar fa-stack-1x"></i>
         </span>
         <br>
-        <p>
-          {{ info.date | date:'EEEE'}}<br />
+        <p style="font-size:2vw">
+          {{ info.date | date:'EEEE'}}
           {{ info.date | date:'MMMM d, yyyy'}}</p>
       </div>
 
@@ -66,7 +65,8 @@
           <i class="fa fa-clock-o fa-stack-1x"></i>
         </span>
         <br>
-          {{ info.date | date:'h:mm:ss a'}}
+          <p style="font-size:2vw">
+            {{ info.date | date:'h:mm:ss a'}} </p>
       </div>
 
       <div ng-show="info.weather" class="text-center col-md-4">
@@ -75,7 +75,8 @@
           <i class="fa fa-sun-o fa-stack-1x"></i>
         </span>
         <br />
-        {{ info.weather.main.temp }} °F
+        <p style="font-size:2vw">
+          {{ info.weather.main.temp }} °F </p>
       </div>
 
     </div>
@@ -83,7 +84,7 @@
 
     <div class="row">
       <div class="text-center col-md-12 touch-to-begin">
-        <p p style="font-size:2vw">
+        <p p style="font-size:2vw;font-weight:bold">
           <!-- change this? do it via an angular controller? -->
           <a ng-href="/" > TOUCH TO BEGIN </a>
         </p>
