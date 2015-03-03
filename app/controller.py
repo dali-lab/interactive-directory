@@ -84,6 +84,19 @@ def get_individuals_in_group(request, group_id):
 
 
 @require_safe
+def get_individuals_by_search(request, search_query):
+    results = Individual.objects.filter(first_name__icontains=search_query) | \
+        Individual.objects.filter(last_name__icontains=search_query)
+
+    return JSONResponse({
+        'query': search_query,
+        'people': [
+            p.json_data() for p in results
+        ]
+    })
+
+
+@require_safe
 def get_people(request):
     """
     """

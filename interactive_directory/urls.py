@@ -19,5 +19,7 @@ urlpatterns = patterns(
     url(r'^api/person/$', controller.get_people, name="people"),
     url(r'^api/person/(?P<person_id>[^/]+)/$',
         controller.get_person, name="person"),
-    # url(r'^api/map/$', controller.get_maps, name="maps")
+    url(r'^api/search/(?P<search_query>[^/]+)/$',
+        controller.get_individuals_by_search,
+        name="search")
 )
