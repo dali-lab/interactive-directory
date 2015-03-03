@@ -9,9 +9,10 @@ class Individual(models.Model):
 
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
-    phone_number = models.IntegerField()
+    phone_number = models.CharField(max_length=20)
     email = models.EmailField()
     office = models.CharField(max_length=100)
+    bio = models.TextField(null=True,blank=True)
 
     unique_media = models.URLField(max_length=200)
     neutral_media = models.URLField(max_length=200)
@@ -26,6 +27,7 @@ class Individual(models.Model):
             'phone_number': self.phone_number,
             'email': self.email,
             'office': self.office,
+            'bio': self.bio,
             'unique_media': self.unique_media,
             'neutral_media': self.neutral_media,
             'waving_media': self.waving_media,
