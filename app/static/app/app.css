@@ -24,6 +24,7 @@ a {
 
 .person-container {
   padding-top: 40px;
+  overflow: hidden;
 }
 
 .black-font {
@@ -84,4 +85,18 @@ a {
 
 .touch-to-begin {
   padding-top: 5%;
+}
+
+.circular-video {
+
+  -webkit-mask-image: url(/s/assets/circlemask.svg);
+
+  -webkit-mask-position: center;
+
+  -webkit-clip-path: circle(100px at center);
+  clip-path: circle(100px at center);
+  border-radius: 100px;
+  -webkit-border-radius: 100pxss;
+  -moz-border-radius: 100px;
+
 }
