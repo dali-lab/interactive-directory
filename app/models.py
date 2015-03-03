@@ -13,10 +13,10 @@ class Individual(models.Model):
     email = models.EmailField()
     office = models.CharField(max_length=100)
 
-    unique_media = models.CharField(max_length=200)
-    neutral_media = models.CharField(max_length=200)
-    waving_media = models.CharField(max_length=200)
-    pointing_media = models.CharField(max_length=200)
+    unique_media = models.URLField(max_length=200)
+    neutral_media = models.URLField(max_length=200)
+    waving_media = models.URLField(max_length=200)
+    pointing_media = models.URLField(max_length=200)
 
     def json_data(self):
         return {
@@ -91,4 +91,10 @@ class Building(models.Model):
     def __str__(self):
         return self.name
 
-# TODO: floor class containing the map
+
+class Map(models.Model):
+    floor = models.IntegerField()
+    map_img = models.URLField()
+
+    def __str__(self):
+        return "Floor {}".format(self.floor)

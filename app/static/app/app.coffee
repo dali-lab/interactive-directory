@@ -10,12 +10,16 @@ directory = angular.module("directory", [
 
 directory.controller("DirectoryCtrl", ["$timeout", "$scope", ($timeout, $scope)->
   @mapOpen = false
+  @selectedFloorNumber = 1
 
   @openMap = =>
     @mapOpen = true
 
   @closeMap = =>
     @mapOpen = false
+
+  @floorIsSelected = (floorNumber)=>
+    floorNumber == @selectedFloorNumber
 
   # start timer for screensaver (180000 = 3 minutes)
   startScreenSaverTimer = ->

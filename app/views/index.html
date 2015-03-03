@@ -71,12 +71,29 @@
 
   {% verbatim %}
   <!-- map code, starts-->
-  <div class="map-container" ng-show="directory.mapOpen" ng-click="directory.closeMap()">
+  <div class="map-container" ng-show="directory.mapOpen">
+  {% endverbatim %}
+
     <div class="map">
-      <img src="http://placekitten.com/g/500/500">
+      <div class="text-right">
+        {% for map in maps %}
+        <div class="map-button" ng-click="directory.selectedFloorNumber = {{ map.floor_number }}">
+          {{ map.floor_number }}
+        </div>
+        {% endfor %}
+        <div class="map-button" ng-click="directory.closeMap()">
+        x
+        </div>
+      </div>
+
+      {% for map in maps %}
+        <div ng-show="directory.floorIsSelected({{ map.floor_number }})">
+          <img width="100%" src="{{ map.image }}">
+        </div>
+      {% endfor %}
+
     </div>
   </div>
-  {% endverbatim %}
 
 
   <!-- In production use:

@@ -9,7 +9,8 @@ urlpatterns = patterns(
 
     '',
     url(r'^$', controller.retrieve_view, name='view'),
-    url(r'^screensaver/$', controller.retrieve_screensaver, name='screensaver'),
+    url(r'^screensaver/$', controller.retrieve_screensaver,
+        name='screensaver'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/building/$', controller.get_building, name='building'),
     url(r'^api/group/$', controller.get_groups, name='groups'),
@@ -18,4 +19,5 @@ urlpatterns = patterns(
     url(r'^api/person/$', controller.get_people, name="people"),
     url(r'^api/person/(?P<person_id>[^/]+)/$',
         controller.get_person, name="person"),
+    # url(r'^api/map/$', controller.get_maps, name="maps")
 )
