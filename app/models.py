@@ -13,8 +13,8 @@ class Individual(models.Model):
     email = models.EmailField()
     office = models.CharField(max_length=100)
 
-    main_media = models.CharField(max_length=200)
-    idle_media = models.CharField(max_length=200)
+    unique_media = models.CharField(max_length=200)
+    neutral_media = models.CharField(max_length=200)
     waving_media = models.CharField(max_length=200)
     pointing_media = models.CharField(max_length=200)
 
@@ -26,8 +26,8 @@ class Individual(models.Model):
             'phone_number': self.phone_number,
             'email': self.email,
             'office': self.office,
-            'main_media': self.main_media,
-            'idle_media': self.idle_media,
+            'unique_media': self.unique_media,
+            'neutral_media': self.neutral_media,
             'waving_media': self.waving_media,
             'pointing_media': self.pointing_media,
 

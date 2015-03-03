@@ -1,7 +1,7 @@
 "use strict"
 angular.module("directory.group", ["ui.router"]).controller(
-  "GroupCtrl", ["$stateParams", "$http", "$scope",
-    ($stateParams, $http, $scope)->
+  "GroupCtrl", ["$stateParams", "$http", "$scope", "$sce"
+    ($stateParams, $http, $scope, $sce)->
       @groupId = $stateParams.groupId
       @urlPrefix = if @groupId then "#/g/#{@groupId}" else "#/a"
       @groupName = ""
@@ -16,11 +16,12 @@ angular.module("directory.group", ["ui.router"]).controller(
       )
 
       @personSelected = (id)=>
+        console.log "selected person id #{id}"
         @selectedPersonId = id
 
       @getPersonMedia = (id, person)=>
-        return 'idle' if @selectedPersonId < 0
-        return if @selectedPersonId == id then 'selected' else 'pointing'
+        return $sce.trustAsResourceUrl(person.neutral_media) if @selectedPersonId < 0
+        return if @selectedPersonId == id then $sce.trustAsResourceUrl(person.waving_media) else $sce.trustAsResourceUrl(person.pointing_media)
 
       $scope = @
   ]
