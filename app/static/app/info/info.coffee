@@ -23,6 +23,6 @@ angular.module("directory.info", []).controller("InfoCtrl",
         $http.get("/api/building/").success (data) =>
             getWeather(data.location)
 
-        $scope = @;
+        $scope = @
     ]
 )

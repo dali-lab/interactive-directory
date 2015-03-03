@@ -8,7 +8,14 @@ directory = angular.module("directory", [
   "directory.info"
 ])
 
-directory.controller("DirectoryCtrl", ["$timeout", ($timeout)->
+directory.controller("DirectoryCtrl", ["$timeout", "$scope", ($timeout, $scope)->
+  @mapOpen = false
+
+  @openMap = =>
+    @mapOpen = true
+
+  @closeMap = =>
+    @mapOpen = false
 
   # start timer for screensaver (180000 = 3 minutes)
   startScreenSaverTimer = ->
@@ -27,6 +34,7 @@ directory.controller("DirectoryCtrl", ["$timeout", ($timeout)->
     resetScreenSaverTimer()
   )
 
+  $scope = @
 ])
 
 directory.config ($stateProvider, $urlRouterProvider) ->
