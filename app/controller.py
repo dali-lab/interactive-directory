@@ -121,15 +121,3 @@ def get_person(request, person_id):
         return HttpResponseNotFound
 
     return JSONResponse(person.json_data())
-
-
-# @require_safe
-# def get_maps(request):
-#     """
-#     """
-#     return JSONResponse({
-#         'maps': [{
-#             'floor_number': map.floor,
-#             'image': map.map_img
-#         } for map in Map.objects.all()]
-#     })

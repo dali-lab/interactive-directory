@@ -7,6 +7,7 @@ angular.module("directory.group", ["ui.router"]).controller(
       @groupName = ""
       @people = []
       @selectedPersonId = -1
+      @searchQuery = ""
 
       query = if @groupId then "/api/group/#{@groupId}" else "/api/person"
 
@@ -22,6 +23,15 @@ angular.module("directory.group", ["ui.router"]).controller(
       @getPersonMedia = (id, person)=>
         return $sce.trustAsResourceUrl(person.neutral_media) if @selectedPersonId < 0
         return if @selectedPersonId == id then $sce.trustAsResourceUrl(person.waving_media) else $sce.trustAsResourceUrl(person.pointing_media)
+
+      @search = =>
+        searchQuery = "/api/search/#{@searchQuery}"
+        $http.get(searchQuery).success((data)=>
+          console.log "success"
+          @groupName = "Searching: #{@searchQuery}"
+          @people = data.people
+        )
+
 
       $scope = @
   ]

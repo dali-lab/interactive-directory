@@ -6,7 +6,7 @@
         <h1 class="black-font">{{ group.groupName }}</h1>
       </div>
       <div class="col-md-5">
-        <input type="search" class="form-control">
+        <input type="search" class="form-control" ng-model="group.searchQuery" ng-change="group.search()">
       </div>
     </div>
 
