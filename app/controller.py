@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_safe
 from django.http import HttpResponse, HttpResponseNotFound
-from app.models import Building, StaffGroup, Individual, ExtraField
+from app.models import Building, StaffGroup, Individual, ExtraField, Map
 import json
 
 
@@ -21,6 +21,10 @@ def retrieve_view(request):
             'name': g.name,
             'priority': g.priority
         } for g in StaffGroup.objects.all()],
+        'maps': [{
+            'floor_number': mapObject.floor,
+            'image': mapObject.map_img
+        } for mapObject in Map.objects.all()]
     })
 
 
@@ -80,6 +84,19 @@ def get_individuals_in_group(request, group_id):
 
 
 @require_safe
+def get_individuals_by_search(request, search_query):
+    results = Individual.objects.filter(first_name__icontains=search_query) | \
+        Individual.objects.filter(last_name__icontains=search_query)
+
+    return JSONResponse({
+        'query': search_query,
+        'people': [
+            p.json_data() for p in results
+        ]
+    })
+
+
+@require_safe
 def get_people(request):
     """
     """
@@ -104,3 +121,15 @@ def get_person(request, person_id):
         return HttpResponseNotFound
 
     return JSONResponse(person.json_data())
+
+
+# @require_safe
+# def get_maps(request):
+#     """
+#     """
+#     return JSONResponse({
+#         'maps': [{
+#             'floor_number': map.floor,
+#             'image': map.map_img
+#         } for map in Map.objects.all()]
+#     })
