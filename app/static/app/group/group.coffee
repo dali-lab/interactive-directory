@@ -1,14 +1,39 @@
 "use strict"
 angular.module("directory.group", ["ui.router"]).controller(
-  "GroupCtrl", ["$stateParams", "$http", "$scope", "$sce"
-    ($stateParams, $http, $scope, $sce)->
+  "GroupCtrl", ["$stateParams", "$http", "$scope", "$sce", "$timeout"
+    ($stateParams, $http, $scope, $sce, $timeout)->
       @groupId = $stateParams.groupId
       @urlPrefix = if @groupId then "#/g/#{@groupId}" else "#/a"
       @groupName = ""
       @people = []
       @selectedPersonId = -1
       @searchQuery = ""
-      @keyboardOpen = false
+      @keyboardOpenEh = false
+      @doNotAllowKeyboardClose = false
+      @searchField = null
+
+      @openKeyboard = ($event)=>
+        console.log "openKeyboard called"
+        @searchField = $event.currentTarget if @searchField is null
+        @keyboardOpenEh = true
+        @doNotAllowKeyboardClose = true
+
+      @closeKeyboard = =>
+        console.log "close keyboard called"
+
+        # close keyboard in 1 second if the keyboard was not clicked
+        $timeout((=>
+          console.log "attempting to close keyboard"
+          @keyboardOpenEh = false if not @doNotAllowKeyboardClose
+          @doNotAllowKeyboardClose = false
+        ), 100)
+
+      @personSelected = (id)=>
+        @selectedPersonId = id
+
+      @keyboardClicked = =>
+        console.log "keyboard clicked called"
+        @searchField.focus()
 
       query = if @groupId then "/api/group/#{@groupId}" else "/api/person"
 
@@ -16,10 +41,6 @@ angular.module("directory.group", ["ui.router"]).controller(
         @groupName = data.group.name
         @people = data.people
       )
-
-      @personSelected = (id)=>
-        console.log "selected person id #{id}"
-        @selectedPersonId = id
 
       @getPersonMedia = (id, person)=>
         return $sce.trustAsResourceUrl(person.neutral_media) if @selectedPersonId < 0
@@ -32,12 +53,6 @@ angular.module("directory.group", ["ui.router"]).controller(
           @groupName = "Searching: #{@searchQuery}"
           @people = data.people
         )
-
-      @openKeyboard = =>
-        @keyboardOpen = true
-
-      @closeKeyboard = =>
-        @keyboardOpen = false
 
       $scope = @
   ]
