@@ -32,7 +32,6 @@
 }
 
 #keyboard {
-  display: block;
   height: 100%; width:100%;
   padding: 2%;
   list-style: none;
@@ -77,11 +76,10 @@
 }
 #keyboard .space {
   clear: left;
-  text-align: center;
   height: 70px;
   width: 50%;
   display: block;
-  margin-left: 20%;
+  margin-left: 17%;
   margin-right: auto;
   padding-bottom: 4%;
 }
