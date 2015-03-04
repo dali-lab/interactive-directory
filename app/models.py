@@ -12,7 +12,7 @@ class Individual(models.Model):
     phone_number = models.CharField(max_length=20)
     email = models.EmailField()
     office = models.CharField(max_length=100)
-    bio = models.TextField(null=True,blank=True)
+    bio = models.TextField(null=True, blank=True)
 
     unique_media = models.URLField(max_length=200)
     neutral_media = models.URLField(max_length=200)
@@ -81,10 +81,6 @@ class BuildingManager(models.Manager):
 
 
 class Building(models.Model):
-
-    """
-    """
-
     objects = BuildingManager()
     name = models.CharField(max_length=64)
     description = models.CharField(max_length=64, null=True, blank=True)

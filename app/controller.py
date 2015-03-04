@@ -77,8 +77,8 @@ def get_individuals_in_group(request, group_id):
             'name': group.name
         },
         'people': [
-            # TODO: sort in alphabetical order
-            p.json_data() for p in Individual.objects.filter(group=group)
+            p.json_data() for p in Individual.objects.filter(
+                group=group).order_by('last_name')
         ]
     })
 
@@ -106,7 +106,7 @@ def get_people(request):
             'name': "All"
         },
         'people': [
-            p.json_data() for p in Individual.objects.all()
+            p.json_data() for p in Individual.objects.all().order_by('last_name')
         ]
     })
 
@@ -121,15 +121,3 @@ def get_person(request, person_id):
         return HttpResponseNotFound
 
     return JSONResponse(person.json_data())
-
-
-# @require_safe
-# def get_maps(request):
-#     """
-#     """
-#     return JSONResponse({
-#         'maps': [{
-#             'floor_number': map.floor,
-#             'image': map.map_img
-#         } for map in Map.objects.all()]
-#     })
