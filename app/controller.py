@@ -101,7 +101,6 @@ def get_people(request):
     """
     """
     return JSONResponse({
-        # TODO: sort in alphabetical order
         'group': {
             'name': "All"
         },

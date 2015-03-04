@@ -10,21 +10,29 @@ html, body {
   left: 0;
   right: 0;
   top: 0;
-  opacity: 0.5;
-  background: #000;
   text-align: center;
   vertical-align: middle;
   display: table-cell;
 }
 
 .map {
+  background-color:#000\9;
+  background-color: rgba(242, 244, 244, .8);
+  border: 20px solid #619090 ;
+  padding: 15px;
   margin-top: 75px;
   position: relative;
   width: 75%;
   display: inline-block;
 }
 
+.active {
+  opacity: 1 !important;
+}
+
 .map-button {
+  opacity: .5;
+  border: 4px solid #EAA327;
   text-align: center;
   display: inline-block;
   border-radius: 100%;
@@ -32,7 +40,14 @@ html, body {
   width: 50px;
   height: 50px;
   color: black;
-  line-height: 50px;
+  line-height: 42px;
+}
+
+.exit-map-button {
+  opacity: 1;
+  background-color: red;
+  color: white;
+  font-size: 20px;
 }
 
 .active-tab {
