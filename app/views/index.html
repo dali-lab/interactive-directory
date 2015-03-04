@@ -16,13 +16,15 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <script src="{% static 'bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'app/app.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'app/keyboard.css' %}">
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body ng-controller="DirectoryCtrl as directory">
+  <!-- KEYBOARD -->
+  {% include "keyboard.html" %}
   <div class="container-fluid">
     <div class="full-height row">
       <div class="full-height tabs-column col-md-2">
-
         <div class="row">
           <div class="text-center col-md-12">
             <p>
