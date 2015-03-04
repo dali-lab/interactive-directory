@@ -8,6 +8,7 @@ angular.module("directory.group", ["ui.router"]).controller(
       @people = []
       @selectedPersonId = -1
       @searchQuery = ""
+      @keyboardOpen = false
 
       query = if @groupId then "/api/group/#{@groupId}" else "/api/person"
 
@@ -32,6 +33,11 @@ angular.module("directory.group", ["ui.router"]).controller(
           @people = data.people
         )
 
+      @openKeyboard = =>
+        @keyboardOpen = true
+
+      @closeKeyboard = =>
+        @keyboardOpen = false
 
       $scope = @
   ]
