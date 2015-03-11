@@ -15,11 +15,6 @@
   /*background-color: rgba(70,110,30,0.75);*/
 }
 
-.keyboard-background {
-  position: fixed;
-  width: 100%
-}
-
 #write {
   margin: 0 0 5px;
   padding: 5px;

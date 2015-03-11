@@ -106,6 +106,16 @@ a {
   border-bottom-style: solid;
 }
 
+.searchbar {
+  top: 20%;
+  padding-right: 10%;
+  left: 0; right: auto;
+}
+
+.close-keyboard {
+  right: 0; left: auto;
+}
+
 .person-header {
   height: 80px;
 }
