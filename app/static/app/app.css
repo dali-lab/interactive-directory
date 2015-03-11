@@ -107,13 +107,12 @@ a {
 }
 
 .searchbar {
-  top: 20%;
-  padding-right: 10%;
-  left: 0; right: auto;
+  float: left;
+  width: 85%;
 }
 
 .close-keyboard {
-  right: 0; left: auto;
+  float: right;
 }
 
 .person-header {
