@@ -131,6 +131,7 @@ a {
 
 .info-header {
   height: 120px;
+  margin-top: 10%;
 }
 
 .fa-stack-1x {
@@ -151,6 +152,10 @@ a {
 
 .touch-to-begin {
   padding-top: 5%;
+}
+
+.widget {
+  padding-bottom: 20%;
 }
 
 /*.circular-video video{
