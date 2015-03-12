@@ -2,6 +2,12 @@ html, body {
   font-family: 'Lato', sans-serif;
   height: 100%;
   color: white;
+  overflow: hidden;
+}
+
+.group-tab-names {
+  margin-left: 2%;
+  margin-right: 2%
 }
 
 .map-container {
@@ -169,6 +175,14 @@ a {
   -moz-border-radius: 50%;
 
 }*/
+
+.square-video {
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
 
 .circular-video video {
   /* make the height the same as the width */
