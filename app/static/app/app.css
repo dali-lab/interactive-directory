@@ -43,6 +43,16 @@ html, body {
   line-height: 42px;
 }
 
+.open-map{
+  position:absolute; /* Absolute fixes footer to bottom. */
+  left:0;
+  right:0;
+  padding:10%;
+  bottom:2%;
+  width:100%;
+  text-align: center;
+}
+
 .exit-map-button {
   opacity: 1;
   background-color: red;
