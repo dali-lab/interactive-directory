@@ -23,6 +23,13 @@ angular.module("directory.info", []).controller("InfoCtrl",
         $http.get("/api/building/").success (data) =>
             getWeather(data.location)
 
+        @getWeatherIcon = =>
+            weatherId = @weather.weather.id
+            console.log "id #{weatherId}"
+
+            if weatherId == 800
+                return "wi-night-clear"
+
         $scope = @
     ]
 )
