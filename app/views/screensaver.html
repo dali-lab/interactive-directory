@@ -74,8 +74,12 @@
           <i ng-class="info.getWeatherIcon()" class="fa-5x"></i>
         </div>
         <br />
-        <p style="font-size:2vw">
-          {{ info.weather.main.temp }} °F </p>
+        <p style="font-size:2vw" ng-show="info.weather.main.temp">
+          {{ info.weather.main.temp }} °F
+        </p>
+        <p style="font-size:2vw" ng-show="!info.weather.main.temp">
+          retrieving weather...
+        </p>
       </div>
 
     </div>
