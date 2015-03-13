@@ -14,7 +14,8 @@ def JSONResponse(dictionary):
 def retrieve_view(request):
     return render(request, "index.html", {
         'building': {
-            'name': Building.objects.get_building().name
+            'name': Building.objects.get_building().name,
+            'description': Building.objects.get_building().description,
         },
         'groups': [{
             'group_id': g.id,
