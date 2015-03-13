@@ -120,6 +120,8 @@ a {
 .person-container {
   padding-top: 40px;
   overflow: hidden;
+  background: #F0F0F0;
+  height: 100%;
 }
 
 .black-font {
@@ -136,7 +138,7 @@ a {
 }
 
 .tabs-column, .right-column {
-  background-color: #4A9AAE;
+  background-color: #23749E;
   position: relative;
 }
 
@@ -148,9 +150,10 @@ a {
 }
 
 .groups-header {
-  background-color: #E7C024;
+  /*background-color: #FBBC5A;*/
+  background-color: #F0F0F0;
   height: 80px;
-  border-bottom-color: #6F7174;
+  border-bottom-color: #FBBC5A;
   border-bottom-width: thick;
   border-bottom-style: solid;
 }
@@ -170,7 +173,7 @@ a {
 
 .info-header {
   height: 120px;
-  margin-top: 5%;
+  margin-top: 7%;
 }
 
 .fa-stack-1x {
