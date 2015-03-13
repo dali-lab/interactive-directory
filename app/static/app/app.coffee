@@ -8,18 +8,26 @@ directory = angular.module("directory", [
   "directory.info"
 ])
 
-directory.controller("DirectoryCtrl", ["$timeout", "$scope", ($timeout, $scope)->
-  @mapOpen = false
-  @selectedFloorNumber = 1
+directory.controller("DirectoryCtrl", ["$timeout", "$scope", "$location", ($timeout, $scope, $location)->
+  DEFAULT_FLOOR_NUMBER = 1
+
+  @mapOpen = =>
+    $location.search().hasOwnProperty('map')
+
+  @getSelectedFloorNumber = =>
+    parseInt(if @mapOpen() then $location.search().map else DEFAULT_FLOOR_NUMBER)
 
   @openMap = =>
-    @mapOpen = true
+    $location.search('map', DEFAULT_FLOOR_NUMBER)
 
   @closeMap = =>
-    @mapOpen = false
+    $location.search('map', null)
 
   @floorIsSelected = (floorNumber)=>
-    floorNumber == @selectedFloorNumber
+    floorNumber == @getSelectedFloorNumber()
+
+  @selectFloor = (floorNumber)=>
+    $location.search('map', floorNumber)
 
   # start timer for screensaver (180000 = 3 minutes)
   startScreenSaverTimer = ->
