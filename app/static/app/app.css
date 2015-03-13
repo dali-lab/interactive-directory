@@ -25,6 +25,15 @@ html, body {
   margin-right: 2%
 }
 
+#logo-footer {
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:3%;
+  width:100%;
+  text-align: center;
+}
+
 .hide {
   display: none;
 }
