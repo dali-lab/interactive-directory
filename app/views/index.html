@@ -79,18 +79,18 @@
     <div class="map">
       <div class="text-right">
         {% for map in maps %}
-        <div ng-class="{ active: directory.floorIsSelected({{ map.floor_number }})}" class="map-button" ng-click="directory.selectFloor({{ map.floor_number }})">
+        <div ng-class="{ active: directory.floorIsSelected({{ map.floor_number }})}" class="clickable map-button" ng-click="directory.selectFloor({{ map.floor_number }})">
           {{ map.floor_number }}
         </div>
         {% endfor %}
-        <div class="exit-map-button map-button" ng-click="directory.closeMap()">
+        <div class="clickable exit-map-button map-button" ng-click="directory.closeMap()">
         x
         </div>
       </div>
 
       {% for map in maps %}
         <div ng-show="directory.floorIsSelected({{ map.floor_number }})">
-          <img width="100%" src="{{ map.image }}">
+          <img class="img-responsive" src="{{ map.image }}">
         </div>
       {% endfor %}
 
