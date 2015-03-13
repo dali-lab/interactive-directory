@@ -73,13 +73,13 @@
 
   {% verbatim %}
   <!-- map code, starts-->
-  <div class="map-container" ng-show="directory.mapOpen">
+  <div class="map-container" ng-show="directory.mapOpen()">
   {% endverbatim %}
 
     <div class="map">
       <div class="text-right">
         {% for map in maps %}
-        <div ng-class="{ active: directory.floorIsSelected({{ map.floor_number }})}" class="map-button" ng-click="directory.selectedFloorNumber = {{ map.floor_number }}">
+        <div ng-class="{ active: directory.floorIsSelected({{ map.floor_number }})}" class="map-button" ng-click="directory.selectFloor({{ map.floor_number }})">
           {{ map.floor_number }}
         </div>
         {% endfor %}

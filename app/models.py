@@ -6,6 +6,7 @@ class Individual(models.Model):
     """
     """
     group = models.ForeignKey('StaffGroup')
+    office_floor = models.ForeignKey('Map')
 
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
@@ -32,7 +33,7 @@ class Individual(models.Model):
             'neutral_media': self.neutral_media,
             'waving_media': self.waving_media,
             'pointing_media': self.pointing_media,
-
+            'office_floor': self.office_floor.floor,
             'extra_fields': [{
                 extra.field: extra.value
             } for extra in ExtraField.objects.filter(individual=self)]
