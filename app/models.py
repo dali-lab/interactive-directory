@@ -10,8 +10,8 @@ class Individual(models.Model):
 
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
-    phone_number = models.CharField(max_length=20)
-    email = models.EmailField()
+    phone_number = models.CharField(max_length=20, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
     office = models.CharField(max_length=100)
     bio = models.TextField(null=True, blank=True)
 
