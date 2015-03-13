@@ -32,6 +32,7 @@ html, body {
   position: relative;
   width: 75%;
   display: inline-block;
+  max-height: 80%;
 }
 
 .active {
