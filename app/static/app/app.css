@@ -2,6 +2,12 @@ html, body {
   font-family: 'Lato', sans-serif;
   height: 100%;
   color: white;
+  overflow: hidden;
+}
+
+.group-tab-names {
+  margin-left: 2%;
+  margin-right: 2%
 }
 
 .hide {
@@ -167,24 +173,25 @@ a {
   padding-bottom: 20%;
 }
 
-/*.circular-video video{
-  -webkit-mask-image: url(/s/assets/circlemask.svg);
-  -webkit-mask-position: center;
 
-  -webkit-clip-path: circle(100px at center);
-  clip-path: circle(100px at center);
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
 
-}*/
-
+/* crop the video to a square before this and it'll work*/
 .circular-video video {
   /* make the height the same as the width */
   width: 100%; height: 100%;
-
   border-radius: 150px;
   -webkit-mask-image: url(/s/assets/mask2.svg);
   -webkit-border-radius: 150px!important;
   -moz-border-radius: 150px;
+}
+
+.circle {
+  height:200px;width:200px;
+  -webkit-border-radius:200px;
+  overflow:hidden;
+  -webkit-mask-image: url(/s/assets/mask2.svg);
 }
