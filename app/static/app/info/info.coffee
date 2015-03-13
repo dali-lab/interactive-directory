@@ -91,9 +91,14 @@ angular.module("directory.info", []).controller("InfoCtrl",
         getWeather = (location) =>
             $http.jsonp("#{WEATHER_API}#{location}&#{API_QUERIES}").success(
                 (data) =>
+                    timeoutLength = 1000
                     if data
                         @weather = data
-                    $timeout((-> getWeather(location)), 5000)
+                        console.log @weather
+                        timeoutLength = 300000
+                    $timeout((-> getWeather(location)), timeoutLength)
+            ).error((data, status)=>
+                $timeout((-> getWeather(location)), 1000)
             )
 
         $http.get("/api/building/").success (data) =>

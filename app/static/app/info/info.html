@@ -32,8 +32,11 @@
     <i ng-class="info.getWeatherIcon()" class="fa-4x"></i>
   </div>
   <div class="col-md-8">
-    <h3>
+    <h3 ng-show="info.weather.main.temp">
       {{ info.weather.main.temp }} °F
+    </h3>
+    <h3 ng-show="!info.weather.main.temp">
+      retrieving weather...
     </h3>
   </div>
 </div>
