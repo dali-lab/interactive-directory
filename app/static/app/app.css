@@ -117,13 +117,6 @@ a {
   color: white;
 }
 
-.person-container {
-  padding-top: 40px;
-  overflow: hidden;
-  background: #F0F0F0;
-  height: 100%;
-}
-
 .black-font {
   color: black;
 }
@@ -156,6 +149,10 @@ a {
   border-bottom-color: #FBBC5A;
   border-bottom-width: thick;
   border-bottom-style: solid;
+  z-index: 1;
+  display: block;
+  position: fixed;
+  width: 54.2%
 }
 
 .searchbar {
@@ -165,6 +162,15 @@ a {
 
 .close-keyboard {
   float: right;
+}
+
+.person-container {
+  margin-top: 80px;
+  padding-top: 40px;
+  overflow: hidden;
+  background: #F0F0F0;
+  height: 100%;
+  z-index: 0;
 }
 
 .person-header {
