@@ -1,6 +1,6 @@
 <div ng-click="group.keyboardClicked()" ng-show="group.keyboardOpenEh" ng-include src="'/s/app/keyboard.html'"></div>
 <div class="full-height row">
-  <div class="force-scrollbar full-height col-md-8">
+  <div class="full-height col-md-8">
     <div class="groups-header row">
       <div class="col-md-7">
         <h1 class="black-font">{{ group.groupName() }}</h1>
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="person-container row">
+    <div class="force-scrollbar person-container row">
       <div class="col-md-4" ng-repeat="person in group.getPeople()">
         <a href="{{ group.urlPrefix }}/p/{{ person.person_id }}">
           <div class="row" ng-click="group.personSelected($index)">
