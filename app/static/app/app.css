@@ -199,23 +199,42 @@ a {
   padding-bottom: 20%;
 }
 
-
-video {
-  width: 100%    !important;
-  height: auto   !important;
-  overflow: hidden;
-}
-
 .circular-video {
     /* make the height the same as the width */
-  width: 300px; height: 300px!important;
+    width: 300px; height: auto;
 }
 
+.side-video video {
+  width: 100%; height: auto;
+}
 
 /* crop the video to a square before this and it'll work*/
 .circular-video video {
+  overflow: hidden;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
   border-radius: 150px!important;
   -webkit-mask-image: url(/s/assets/mask2.svg);
+  mask-image: url(/s/assets/mask2.svg);
   -webkit-border-radius: 150px!important;
   -moz-border-radius: 150px!important;
+}
+
+.web-cam {
+  background-color: black;
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  position: relative;
+  top: 0;
+  left: 10px;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.web-cam video {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 0;
 }
