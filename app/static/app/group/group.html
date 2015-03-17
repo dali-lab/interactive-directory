@@ -18,14 +18,14 @@
     <div class="force-scrollbar person-container row">
       <div class="col-md-4" ng-repeat="person in group.getPeople()">
         <a href="{{ group.urlPrefix }}/p/{{ person.person_id }}">
-          <div class="web-cam row" ng-click="group.personSelected($index)">
+          <div class="circular-video row" ng-click="group.personSelected($index)">
             <div class="col-md-12">
               <video autoplay loop ng-src="{{ group.getPersonMedia($index, person) }}" type="vidoe/mp4" preload="auto">
             </div>
           </div>
           <div class="row">
             <div class="text-center col-md-12">
-                <h4 class="black-font">{{ person.first_name}} <strong>{{person.last_name}}</strong></h4>
+                <h4 class="person-name black-font">{{ person.first_name}} <strong>{{person.last_name}}</strong></h4>
             </div>
           </div>
         </a>

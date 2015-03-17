@@ -121,6 +121,10 @@ a {
   color: black;
 }
 
+.person-name {
+  padding-bottom: 7%;
+}
+
 .container, .container-fluid {
   height: 100%;
 }
@@ -209,7 +213,7 @@ a {
 }
 
 /* crop the video to a square before this and it'll work*/
-.circular-video video {
+.circular video {
   overflow: hidden;
   transform-origin: center center;
   -webkit-transform-origin: center center;
@@ -220,7 +224,7 @@ a {
   -moz-border-radius: 150px!important;
 }
 
-.web-cam {
+.circular-video {
   background-color: black;
   width: 300px;
   height: 300px;
@@ -232,7 +236,7 @@ a {
   -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
 }
 
-.web-cam video {
+.circular-video video {
   position: absolute;
   width: 300px;
   height: 300px;
