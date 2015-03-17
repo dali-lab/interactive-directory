@@ -14,19 +14,19 @@
   <div class="col-md-10 col-md-offset-1">
     <div class="row">
       <div class="col-md-12">
-        <h4><strong>PHONE:</strong> {{ pCtrl.person.phone_number }}</h4>
+        <h4><strong>PHONE: </strong> {{ pCtrl.person.phone_number }}</h4>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
-        <h4><strong>EMAIL:</strong> {{ pCtrl.person.email }}</h4>
+        <h4><strong>EMAIL: </strong> {{ pCtrl.person.email }}</h4>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
-        <h4 class="clickable" ng-click="pCtrl.openMap()"><strong>OFFICE:</strong> {{ pCtrl.person.office }}</h4>
+        <h4><strong>OFFICE: <button class="btn btn-danger" ng-click="pCtrl.openMap()">{{ pCtrl.person.office }}</button></strong></h4>
       </div>
     </div>
 
