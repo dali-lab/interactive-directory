@@ -198,7 +198,9 @@ a {
 }
 
 .person-header {
+  padding-top: 2%;
   height: 80px;
+  font-size: 2vw;
 }
 
 .info-header {
