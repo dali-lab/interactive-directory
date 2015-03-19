@@ -5,7 +5,7 @@ class Individual(models.Model):
 
     """
     """
-    group = models.ForeignKey('StaffGroup')
+    groups = models.ManyToManyField('StaffGroup')
     office_floor = models.ForeignKey('Map')
 
     first_name = models.CharField(max_length=64)

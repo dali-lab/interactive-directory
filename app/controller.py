@@ -79,7 +79,7 @@ def get_individuals_in_group(request, group_id):
         },
         'people': [
             p.json_data() for p in Individual.objects.filter(
-                group=group).order_by('last_name')
+                groups=group).order_by('last_name')
         ]
     })
 
