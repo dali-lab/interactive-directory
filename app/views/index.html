@@ -21,7 +21,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'weather-icons-master/css/weather-icons.css' %}">
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 </head>
-<body ng-controller="DirectoryCtrl as directory">
+<body ng-controller="DirectoryCtrl as directory" class="dragscroll">
 
   <div class="container-fluid">
     <div class="full-height row">
@@ -103,6 +103,7 @@
   -->
   <script src="{% static 'bower_components/angular/angular.js' %}"></script>
   <script src="{% static 'bower_components/angular-ui-router/release/angular-ui-router.min.js' %}"></script>
+  <script src="{% static 'app/dragscroll.js' %}"></script>
   <script src="{% static 'app/group/group.js' %}"></script>
   <script src="{% static 'app/person/person.js' %}"></script>
   <script src="{% static 'app/info/info.js' %}"></script>
