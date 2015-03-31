@@ -7,7 +7,7 @@
       </div>
       <div class="col-md-5" style="top:20%">
         <div class="searchbar">
-          <input type="search" id="search-text" class="form-control" ng-model="group.searchQuery" ng-change="group.search()" ng-focus="group.openKeyboard($event)">
+          <input placeholder="search" type="search" id="search-text" class="form-control" ng-model="group.searchQuery" ng-change="group.search()" ng-focus="group.openKeyboard($event)">
         </div>
         <div class="close-keyboard">
           <i class="clickable fa fa-times-circle fa-3x" ng-show="group.keyboardOpenEh" ng-click="group.closeKeyboard()"></i>
