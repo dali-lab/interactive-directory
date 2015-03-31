@@ -1,11 +1,11 @@
 <div ng-click="group.keyboardClicked()" ng-show="group.keyboardOpenEh" ng-include src="'/s/app/keyboard.html'"></div>
-<div class="full-height row">
+<div class="full-height row dragscroll">
   <div class="full-height col-md-8">
     <div class="groups-header row">
       <div class="col-md-7">
         <h1 class="black-font">{{ group.groupName() }}</h1>
       </div>
-      <div class="col-md-4" style="top:20%">
+      <div class="col-md-5" style="top:20%">
         <div class="searchbar">
           <input type="search" id="search-text" class="form-control" ng-model="group.searchQuery" ng-change="group.search()" ng-focus="group.openKeyboard($event)">
         </div>
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="force-scrollbar person-container row">
+    <div class="force-scrollbar dragscroll person-container row">
       <div class="col-md-4" ng-repeat="person in group.getPeople()">
         <a href="{{ group.urlPrefix }}/p/{{ person.person_id }}">
           <div class="circular-video row" ng-click="group.personSelected($index)">
@@ -30,9 +30,12 @@
           </div>
         </a>
       </div>
+      <div class="col-md-12 person-container-extra"></div>
     </div>
+
   </div>
 
   <div class="full-height right-column col-md-4 left-shadow" ui-view></div>
 
 </div>
+<script src="/s/app/dragscroll.js"></script>
