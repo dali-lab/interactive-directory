@@ -3,7 +3,7 @@ html, body {
   height: 100%;
   color: white;
   overflow: hidden;
-  cursor: default;
+  cursor : -o-grab; cursor : -moz-grab; cursor : -webkit-grab;
 }
 
 .force-scrollbar {
@@ -198,6 +198,7 @@ a {
   background: #F0F0F0;
   height: 100%;
   padding-left: 2%;
+  overflow: scroll;
 }
 
 .person-header {
