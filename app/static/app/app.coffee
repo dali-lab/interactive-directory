@@ -10,7 +10,7 @@ directory = angular.module("directory", [
 
 directory.controller("DirectoryCtrl", ["$timeout", "$scope", "$location", ($timeout, $scope, $location)->
   DEFAULT_FLOOR_NUMBER = 1
-  selectedTab = 0
+  @selectedTab = 0
 
   @mapOpen = =>
     $location.search().hasOwnProperty('map')
