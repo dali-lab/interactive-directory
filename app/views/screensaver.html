@@ -19,85 +19,87 @@
   <link rel="stylesheet" type="text/css" href="{% static 'weather-icons-master/css/weather-icons.css' %}">
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <div class="container-fluid screensaver" ng-controller="InfoCtrl as info">
-    <div class="row welcome">
-      <div class="text-center col-md-12">
-          <p style="font-size:5vw">
-            welcome to
-          </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="text-center col-md-12">
-          <p style="font-size:8vw;font-weight:bold">
-            {{ building.name | upper }}
-          </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="text-center col-md-12">
-        <p p style="font-size:2.2vw">
-          {% if building.description %}
-            {{ building.description | upper }}
-          {% endif %}
-        </p>
-      </div>
-    </div>
-
-    {% verbatim %}
-    <div class="row welcome-icons">
-      <div class="text-center col-md-4">
-        <div class="icon-container">
-          <i class="fa fa-calendar fa-5x"></i>
+<a ng-href="/" >
+  <body>
+    <div class="container-fluid screensaver" ng-controller="InfoCtrl as info">
+      <div class="row welcome">
+        <div class="text-center col-md-12">
+            <p style="font-size:5vw">
+              welcome to
+            </p>
         </div>
-        <br>
-        <p style="font-size:2vw">
-          {{ info.date | date:'EEEE'}}
-          {{ info.date | date:'MMMM d, yyyy'}}</p>
       </div>
 
-      <div class="text-center col-md-4">
-        <div class="icon-container">
-          <i class="fa fa-clock-o fa-5x"></i>
+      <div class="row">
+        <div class="text-center col-md-12">
+            <p style="font-size:8vw;font-weight:bold">
+              {{ building.name | upper }}
+            </p>
         </div>
+      </div>
 
-        <br>
+      <div class="row">
+        <div class="text-center col-md-12">
+          <p p style="font-size:2.2vw">
+            {% if building.description %}
+              {{ building.description | upper }}
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      {% verbatim %}
+      <div class="row welcome-icons">
+        <div class="text-center col-md-4">
+          <div class="icon-container">
+            <i class="fa fa-calendar fa-5x"></i>
+          </div>
+          <br>
           <p style="font-size:2vw">
-            {{ info.date | date:'h:mm:ss a'}} </p>
-      </div>
-
-      <div ng-show="info.weather" class="text-center col-md-4">
-        <div class="icon-container">
-          <i ng-class="info.getWeatherIcon()" class="fa-5x"></i>
+            {{ info.date | date:'EEEE'}}
+            {{ info.date | date:'MMMM d, yyyy'}}</p>
         </div>
-        <br />
-        <p style="font-size:2vw" ng-show="info.weather.main.temp">
-          {{ info.weather.main.temp }} °F
-        </p>
-        <p style="font-size:2vw" ng-show="!info.weather.main.temp">
-          retrieving weather...
-        </p>
+
+        <div class="text-center col-md-4">
+          <div class="icon-container">
+            <i class="fa fa-clock-o fa-5x"></i>
+          </div>
+
+          <br>
+            <p style="font-size:2vw">
+              {{ info.date | date:'h:mm:ss a'}} </p>
+        </div>
+
+        <div ng-show="info.weather" class="text-center col-md-4">
+          <div class="icon-container">
+            <i ng-class="info.getWeatherIcon()" class="fa-5x"></i>
+          </div>
+          <br />
+          <p style="font-size:2vw" ng-show="info.weather.main.temp">
+            {{ info.weather.main.temp }} °F
+          </p>
+          <p style="font-size:2vw" ng-show="!info.weather.main.temp">
+            retrieving weather...
+          </p>
+        </div>
+
       </div>
+      {% endverbatim %}
 
-    </div>
-    {% endverbatim %}
-
-    <div class="row">
-      <div class="text-center col-md-12 touch-to-begin">
-        <p p style="font-size:2vw;font-weight:bold">
-          <a ng-href="/" > TOUCH TO BEGIN </a>
-        </p>
+      <div class="row">
+        <div class="text-center col-md-12 touch-to-begin">
+          <p p style="font-size:2vw;font-weight:bold">
+            TOUCH TO BEGIN
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="{% static 'bower_components/angular/angular.js' %}"></script>
-  <script src="{% static 'app/info/info.js' %}"></script>
-</body>
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+    -->
+    <script src="{% static 'bower_components/angular/angular.js' %}"></script>
+    <script src="{% static 'app/info/info.js' %}"></script>
+  </body>
+</a>
 </html>
