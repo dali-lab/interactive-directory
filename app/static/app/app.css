@@ -88,6 +88,7 @@ a, a:hover {
   width: 75%;
   display: inline-block;
   max-height: 80%;
+  overflow: scroll;
 }
 
 .active {

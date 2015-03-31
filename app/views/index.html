@@ -75,13 +75,14 @@
   <div class="map-container" ng-show="directory.mapOpen()">
   {% endverbatim %}
 
-    <div class="map">
+    <div class="map dragscroll">
       <div class="text-right">
         {% for map in maps %}
         <div ng-class="{ active: directory.floorIsSelected({{ map.floor_number }})}" class="clickable map-button" ng-click="directory.selectFloor({{ map.floor_number }})">
           {{ map.floor_number }}
         </div>
         {% endfor %}
+
         <div class="clickable exit-map-button map-button" ng-click="directory.closeMap()">
         x
         </div>
