@@ -6,13 +6,13 @@ class Individual(models.Model):
     """
     """
     groups = models.ManyToManyField('StaffGroup')
-    office_floor = models.ForeignKey('Map')
+    office_floor = models.ForeignKey('Map', null=True, blank=True)
 
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
-    office = models.CharField(max_length=100)
+    office = models.CharField(max_length=100, null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
 
     unique_media = models.URLField(max_length=200)
@@ -33,7 +33,7 @@ class Individual(models.Model):
             'neutral_media': self.neutral_media,
             'waving_media': self.waving_media,
             'pointing_media': self.pointing_media,
-            'office_floor': self.office_floor.floor,
+            'office_floor': self.office_floor.floor if self.office_floor is not None else None,
             'extra_fields': [{
                 extra.field: extra.value
             } for extra in ExtraField.objects.filter(individual=self)]
