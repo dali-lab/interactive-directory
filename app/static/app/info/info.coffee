@@ -94,7 +94,6 @@ angular.module("directory.info", []).controller("InfoCtrl",
                     timeoutLength = 1000
                     if data
                         @weather = data
-                        console.log @weather
                         timeoutLength = 300000
                     $timeout((-> getWeather(location)), timeoutLength)
             ).error((data, status)=>

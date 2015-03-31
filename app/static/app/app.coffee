@@ -10,7 +10,13 @@ directory = angular.module("directory", [
 
 directory.controller("DirectoryCtrl", ["$timeout", "$scope", "$location", ($timeout, $scope, $location)->
   DEFAULT_FLOOR_NUMBER = 1
-  @selectedTab = 0
+
+  getDefaultSelectedTabFromPath = (path)->
+    return 0 if path.slice(0, 3) != "/g/"
+    path = path.slice(3)
+    path.slice(0, path.indexOf("/"))
+
+  @selectedTab = getDefaultSelectedTabFromPath($location.path())
 
   @mapOpen = =>
     $location.search().hasOwnProperty('map')
