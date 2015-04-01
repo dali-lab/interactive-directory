@@ -3,14 +3,8 @@ from django.contrib import admin
 from app import controller
 
 urlpatterns = patterns(
-    # Examples:
-    # url(r'^$', 'django_interactive_directory.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     '',
     url(r'^$', controller.retrieve_view, name='view'),
-    url(r'^screensaver/$', controller.retrieve_screensaver,
-        name='screensaver'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/building/$', controller.get_building, name='building'),
     url(r'^api/group/$', controller.get_groups, name='groups'),

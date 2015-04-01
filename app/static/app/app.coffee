@@ -38,7 +38,7 @@ directory.controller("DirectoryCtrl", ["$timeout", "$scope", "$location", ($time
 
   # start timer for screensaver (180000 = 3 minutes)
   startScreenSaverTimer = ->
-    $timeout((-> window.location = "/screensaver"), 180000)
+    $timeout((-> window.location = "/"), 180000)
 
   # initialize screen saver timer
   screensaverTimer = startScreenSaverTimer()
