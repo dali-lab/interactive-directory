@@ -280,3 +280,12 @@ a {
   padding-bottom: 100%;
   left: 0;
 }
+
+.btn-xlarge {
+  padding: 5% 10%;
+  font-size: 2.5vw;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
